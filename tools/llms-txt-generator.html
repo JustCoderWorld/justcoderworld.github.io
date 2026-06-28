@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free llms.txt Generator (2026) — GEO Lens</title>
+<meta name="description" content="Free llms.txt generator. Build a valid llms.txt file that tells ChatGPT, Perplexity & other AI crawlers what your site is about and which pages to cite. Copy or download in one click.">
+<meta name="author" content="GEO Lens">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "WebApplication", "name": "Free llms.txt Generator", "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any", "url": "https://justcoderworld.github.io/geo-lens/tools/llms-txt-generator.html",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "description": "A free tool that builds a valid llms.txt file to help AI answer engines understand and cite your website." },
+    { "@type": "FAQPage", "mainEntity": [
+      { "@type": "Question", "name": "What is llms.txt?", "acceptedAnswer": { "@type": "Answer", "text": "llms.txt is a plain-text Markdown file placed at the root of your website (yoursite.com/llms.txt) that gives AI crawlers a curated, machine-readable map of your most important pages and what your site is about." } },
+      { "@type": "Question", "name": "Where do I put the llms.txt file?", "acceptedAnswer": { "@type": "Answer", "text": "Upload it to the root of your domain so it is reachable at https://yoursite.com/llms.txt, the same place you would put robots.txt." } }
+    ]}
+  ]
+}
+</script>
+<style>
+.tool{max-width:820px;margin:0 auto;padding:50px 28px}
+.tool h1{font-size:38px;font-weight:800;letter-spacing:-.02em}
+.tool .intro{color:var(--muted);font-size:17px;margin-top:14px;line-height:1.6}
+.fld{margin-top:16px}
+.fld label{font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:6px}
+.fld input,.fld textarea{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;padding:10px 12px}
+.fld textarea{min-height:56px;resize:vertical}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:14px}
+.sec .sechead{display:flex;gap:10px;align-items:center}
+.sec .sechead input{flex:1}
+.lnk{display:grid;grid-template-columns:1fr 1.2fr 1.4fr auto;gap:8px;margin-top:8px}
+.lnk input{background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:13px;padding:8px 10px}
+.btn-sm{font-size:12px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer}
+.btn-sm:hover{border-color:var(--accent)}
+.out{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#070809}
+.out-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 14px;background:rgba(62,207,142,.08);border-bottom:1px solid var(--line);font-weight:700;font-size:13px;color:var(--green)}
+.out pre{margin:0;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55;color:#cdd3df;white-space:pre-wrap;word-break:break-word;max-height:360px;overflow:auto}
+.cta-box{margin-top:30px;padding:20px;border-radius:14px;background:linear-gradient(135deg,rgba(108,140,255,.12),rgba(62,207,142,.08));border:1px solid var(--line);text-align:center}
+@media(max-width:640px){.lnk{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand"><a href="../index.html" style="display:flex;align-items:center;gap:11px;color:var(--text)"><span class="logo">◎</span>GEO Lens</a></div>
+  <div class="nav-links"><a href="../index.html#how">How it works</a><a href="index.html">Free tools</a><a href="../blog/">Blog</a><a href="../index.html">Get the extension</a></div>
+</div></nav>
+
+<main class="tool">
+  <h1>Free llms.txt Generator</h1>
+  <p class="intro">An <strong>llms.txt</strong> file is a Markdown map placed at your site root (<code>yoursite.com/llms.txt</code>) that tells AI answer engines like ChatGPT and Perplexity what your site is about and which pages matter most — so they cite the right ones. Fill in the fields below, then copy or download your file.</p>
+
+  <div class="fld"><label>Site / project name</label><input id="name" placeholder="GEO Lens"></div>
+  <div class="fld"><label>One-line summary (shown as a &gt; blockquote)</label><input id="summary" placeholder="Free Chrome extension that scores and fixes any page's AI citability."></div>
+  <div class="fld"><label>Optional details (a sentence or two of context)</label><textarea id="details" placeholder="GEO Lens helps SEO and content teams get cited by AI answer engines..."></textarea></div>
+
+  <div id="secs"></div>
+  <div style="margin-top:14px"><button class="btn-sm" id="addsec">+ Add section</button></div>
+
+  <div style="margin-top:20px"><button class="btn btn-primary" id="gen">Generate llms.txt</button></div>
+
+  <div class="out" id="outwrap" style="display:none">
+    <div class="out-head">llms.txt
+      <span style="display:flex;gap:8px">
+        <button class="btn-sm" id="dl" style="color:#0b0d12;background:#6c8cff;border:none;font-weight:800">Download</button>
+        <button class="btn-sm" id="copy" style="color:#0b0d12;background:var(--green);border:none;font-weight:800">Copy</button>
+      </span>
+    </div>
+    <pre id="out"></pre>
+  </div>
+
+  <div class="cta-box">
+    <strong>An llms.txt only helps if your pages are actually citable.</strong>
+    <p style="color:var(--muted);font-size:14px;margin:8px 0 14px">GEO Lens scores any page's AI citability across 14 signals and generates the on-page fixes (schema, FAQ, meta) in one click.</p>
+    <a class="btn btn-primary" href="../index.html">Get GEO Lens — Free →</a>
+  </div>
+
+  <section style="margin-top:48px">
+    <h2 style="font-size:24px">What is llms.txt?</h2>
+    <p style="color:var(--muted);line-height:1.7;margin-top:10px">llms.txt is a proposed standard: a single Markdown file at the root of your domain that gives large language models a clean, curated overview of your site. Where <code>robots.txt</code> tells crawlers what they <em>can't</em> access, <code>llms.txt</code> tells AI models what's <em>most important</em> — your key pages, docs and resources — in a format they parse easily. It's an emerging, low-effort GEO signal worth adding in 2026.</p>
+    <h3 style="font-size:18px;margin-top:22px">Where do I put it?</h3>
+    <p style="color:var(--muted);line-height:1.7;margin-top:8px">Upload the file to your site root so it's reachable at <code>https://yoursite.com/llms.txt</code> — the same place as robots.txt.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="brand"><span class="logo">◎</span>GEO Lens</div>
+  <div class="nav-links"><a href="../index.html">Home</a><a href="index.html">Free tools</a><a href="../blog/">Blog</a><a href="../privacy.html">Privacy</a></div>
+  <div>© 2026 GEO Lens</div>
+</div></footer>
+
+<script>
+const secs=document.getElementById('secs');
+function addLink(box,t,u,d){
+  const r=document.createElement('div');r.className='lnk';
+  r.innerHTML='<input class="lt" placeholder="Page title" value="'+(t||'')+'"><input class="lu" placeholder="https://yoursite.com/page" value="'+(u||'')+'"><input class="ld" placeholder="Short description (optional)" value="'+(d||'')+'"><button class="btn-sm lrm">✕</button>';
+  r.querySelector('.lrm').onclick=()=>r.remove();
+  box.appendChild(r);
+}
+function addSec(title){
+  const s=document.createElement('div');s.className='sec';
+  s.innerHTML='<div class="sechead"><input class="st" placeholder="Section name (e.g. Docs, Blog, Products)" value="'+(title||'')+'"><button class="btn-sm srm">Remove</button></div><div class="links"></div><button class="btn-sm addlnk" style="margin-top:8px">+ Add link</button>';
+  const links=s.querySelector('.links');
+  s.querySelector('.addlnk').onclick=()=>addLink(links,'','','');
+  s.querySelector('.srm').onclick=()=>s.remove();
+  addLink(links,'','','');
+  secs.appendChild(s);
+}
+addSec('Key pages');
+document.getElementById('addsec').onclick=()=>addSec('');
+document.getElementById('gen').onclick=()=>{
+  const name=document.getElementById('name').value.trim()||'My Site';
+  const summary=document.getElementById('summary').value.trim();
+  const details=document.getElementById('details').value.trim();
+  let out='# '+name+'\n';
+  if(summary) out+='\n> '+summary+'\n';
+  if(details) out+='\n'+details+'\n';
+  [...document.querySelectorAll('.sec')].forEach(s=>{
+    const st=s.querySelector('.st').value.trim();
+    const links=[...s.querySelectorAll('.lnk')].map(r=>({t:r.querySelector('.lt').value.trim(),u:r.querySelector('.lu').value.trim(),d:r.querySelector('.ld').value.trim()})).filter(x=>x.t&&x.u);
+    if(!links.length)return;
+    out+='\n## '+(st||'Links')+'\n\n';
+    links.forEach(x=>{out+='- ['+x.t+']('+x.u+')'+(x.d?': '+x.d:'')+'\n';});
+  });
+  document.getElementById('out').textContent=out.trim()+'\n';
+  document.getElementById('outwrap').style.display='block';
+};
+document.getElementById('copy').onclick=(e)=>{navigator.clipboard.writeText(document.getElementById('out').textContent).then(()=>{e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy',1500);});};
+document.getElementById('dl').onclick=()=>{const b=new Blob([document.getElementById('out').textContent],{type:'text/plain'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='llms.txt';a.click();};
+</script>
+</body>
+</html>

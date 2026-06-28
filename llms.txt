@@ -1,0 +1,27 @@
+# GEO Lens
+
+> Free Chrome extension that scores any web page's AI citability — how likely ChatGPT, Perplexity and Google AI are to cite it — and generates the copy-paste code to fix the gaps.
+
+GEO Lens helps SEO specialists, content marketers and agencies optimize pages for AI answer engines (Generative Engine Optimization / Answer Engine Optimization). It reads the real, rendered page in the browser, scores 14 citability signals, and writes ready-to-paste FAQPage/Article JSON-LD and meta fixes.
+
+## Main pages
+
+- [GEO Lens home](https://justcoderworld.github.io/geo-lens/): What GEO Lens is, how it works, pricing and FAQ.
+- [Privacy policy](https://justcoderworld.github.io/geo-lens/privacy.html): What the extension does and does not collect.
+
+## Free tools
+
+- [Free tools index](https://justcoderworld.github.io/geo-lens/tools/): All no-signup GEO and schema tools.
+- [FAQPage schema generator](https://justcoderworld.github.io/geo-lens/tools/faqpage-schema-generator.html): Turn Q&A into valid FAQPage JSON-LD.
+- [Article schema generator](https://justcoderworld.github.io/geo-lens/tools/article-schema-generator.html): Generate Article JSON-LD with author and dates.
+- [Product schema generator](https://justcoderworld.github.io/geo-lens/tools/product-schema-generator.html): Generate Product JSON-LD with price, rating and availability.
+- [llms.txt generator](https://justcoderworld.github.io/geo-lens/tools/llms-txt-generator.html): Build an llms.txt file for your own site.
+
+## Guides
+
+- [GEO blog index](https://justcoderworld.github.io/geo-lens/blog/): Data-backed guides on Generative Engine Optimization.
+- [Ranks #1 on Google but ChatGPT ignores it](https://justcoderworld.github.io/geo-lens/blog/google-rank-but-not-cited.html): Why ranking and AI citability split in 2026.
+- [How to get cited by ChatGPT and Perplexity](https://justcoderworld.github.io/geo-lens/blog/get-cited-by-chatgpt-perplexity.html): 8 proven tactics with data.
+- [The 14-signal GEO checklist for 2026](https://justcoderworld.github.io/geo-lens/blog/geo-checklist-2026.html): The complete on-page checklist with fixes.
+- [llms.txt explained](https://justcoderworld.github.io/geo-lens/blog/llms-txt-explained.html): What llms.txt is and how to create one.
+- [GEO vs SEO](https://justcoderworld.github.io/geo-lens/blog/geo-vs-seo.html): The difference between GEO and SEO, and why you need both.

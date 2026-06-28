@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>llms.txt explained: the simple file that helps AI cite your site (2026)</title>
+<meta name="description" content="What llms.txt is, why it matters for AI search, and how to create one in two minutes — the emerging GEO standard for getting cited by ChatGPT and Perplexity.">
+<meta name="author" content="GEO Lens">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "Article", "headline": "llms.txt explained: the simple file that helps AI cite your site (2026)",
+      "author": { "@type": "Organization", "name": "GEO Lens" }, "publisher": { "@type": "Organization", "name": "GEO Lens" },
+      "datePublished": "2026-06-28", "dateModified": "2026-06-28",
+      "mainEntityOfPage": "https://justcoderworld.github.io/geo-lens/blog/llms-txt-explained.html" },
+    { "@type": "FAQPage", "mainEntity": [
+      { "@type": "Question", "name": "What is llms.txt?", "acceptedAnswer": { "@type": "Answer", "text": "llms.txt is a Markdown file at the root of your website that gives AI crawlers a curated, machine-readable map of your most important pages and what your site is about." } },
+      { "@type": "Question", "name": "Is llms.txt the same as robots.txt?", "acceptedAnswer": { "@type": "Answer", "text": "No. robots.txt tells crawlers what they may not access; llms.txt tells AI models what is most important and worth citing. They serve opposite purposes and can coexist." } },
+      { "@type": "Question", "name": "Does llms.txt guarantee AI citations?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is a helpful, low-effort signal, but AI engines still need your individual pages to be well-structured and citable. Pair llms.txt with on-page schema, answer-first content and clear headings." } }
+    ]}
+  ]
+}
+</script>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="brand"><a href="../index.html" style="display:flex;align-items:center;gap:11px;color:var(--text)"><span class="logo">◎</span>GEO Lens</a></div>
+  <div class="nav-links"><a href="../index.html#how">How it works</a><a href="index.html">All guides</a><a href="../tools/index.html">Free tools</a><a href="../index.html">Get the extension</a></div>
+</div></nav>
+
+<main class="doc">
+  <h1>llms.txt explained: the simple file that helps AI cite your site</h1>
+  <div class="updated">By GEO Lens · <time datetime="2026-06-28">June 28, 2026</time></div>
+
+  <p>If you want ChatGPT, Perplexity and other AI answer engines to understand and cite your site, <strong>llms.txt</strong> is one of the lowest-effort moves you can make in 2026. Here's what it is, why it matters, and how to create one in about two minutes.</p>
+
+  <h2>What is llms.txt?</h2>
+  <p>llms.txt is a plain-text Markdown file you place at the root of your domain — <code>https://yoursite.com/llms.txt</code> — that gives large language models a clean, curated overview of your site: what it's about and which pages matter most. Instead of forcing an AI crawler to guess your site's structure from messy HTML and navigation, you hand it a tidy map.</p>
+
+  <h2>Is it the same as robots.txt?</h2>
+  <p>No — they're opposites. <code>robots.txt</code> tells crawlers what they <em>can't</em> access. <code>llms.txt</code> tells AI models what's <em>most important</em>. You can (and should) have both.</p>
+
+  <h2>What does an llms.txt file look like?</h2>
+  <p>It's just Markdown: an H1 with your site name, an optional one-line summary as a blockquote, then sections of links with short descriptions.</p>
+  <pre style="background:#070809;border:1px solid var(--line);border-radius:10px;padding:14px;overflow:auto;font-size:13px;color:#cdd3df"># Acme Docs
+
+&gt; Developer documentation for the Acme API.
+
+## Guides
+
+- [Quickstart](https://acme.com/docs/quickstart): Get running in 5 minutes.
+- [Authentication](https://acme.com/docs/auth): API keys and OAuth.
+
+## Reference
+
+- [API reference](https://acme.com/docs/api): Every endpoint, with examples.</pre>
+
+  <h2>How do I create one?</h2>
+  <p>Write it by hand, or use our free <a href="../tools/llms-txt-generator.html">llms.txt generator</a> — fill in your site name, summary and key links, then copy or download the file and upload it to your site root. Two minutes, no signup.</p>
+
+  <h2>Does llms.txt guarantee AI citations?</h2>
+  <p>No. It's a helpful signal, not a magic switch. AI engines still need your individual pages to be <em>citable</em> — well-structured, answer-first, with schema and clear headings. llms.txt points the model at your best pages; the pages themselves still have to earn the citation. (That's exactly what <a href="../index.html">GEO Lens</a> measures and fixes.)</p>
+
+  <h2>The 2-minute GEO win</h2>
+  <p>Add llms.txt today, then make sure the pages you listed are actually citable. Start with these:</p>
+  <ul>
+    <li><a href="get-cited-by-chatgpt-perplexity.html">How to get cited by ChatGPT and Perplexity (8 tactics)</a></li>
+    <li><a href="geo-checklist-2026.html">The 14-signal GEO checklist for 2026</a></li>
+    <li><a href="google-rank-but-not-cited.html">Why ranking #1 no longer means AI cites you</a></li>
+  </ul>
+
+  <h2>FAQ</h2>
+  <h3>What is llms.txt?</h3>
+  <p>A Markdown file at your site root that gives AI crawlers a curated map of your most important pages.</p>
+  <h3>Is llms.txt the same as robots.txt?</h3>
+  <p>No — robots.txt restricts access; llms.txt highlights what's important. They coexist.</p>
+  <h3>Does llms.txt guarantee AI citations?</h3>
+  <p>No. It's a low-effort signal; your pages still need to be well-structured and citable.</p>
+
+  <p style="margin-top:34px"><a class="btn btn-primary" href="../tools/llms-txt-generator.html">Generate your llms.txt free →</a></p>
+</main>
+<footer><div class="wrap"><div class="brand"><span class="logo">◎</span>GEO Lens</div><div class="nav-links"><a href="../index.html">Home</a><a href="index.html">Blog</a><a href="../privacy.html">Privacy</a></div><div>© 2026 GEO Lens</div></div></footer>
+</body>
+</html>

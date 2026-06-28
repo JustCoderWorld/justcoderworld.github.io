@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start your GEO Lens Pro trial</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta name="description" content="Start a 7-day GEO Lens Pro trial — AI rewrites, multi-page scans, audit history and branded client reports. $9.99/mo, cancel anytime.">
+<!-- Pro upgrade is a transactional page; keep it out of AI/search indexes. -->
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand"><a href="index.html" style="color:inherit;text-decoration:none"><span class="logo">◎</span>GEO Lens</a></div>
+  <div class="nav-links">
+    <a href="index.html#pricing">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="dot"></span>GEO Lens Pro</div>
+  <h1>Start your <span class="grad">7-day Pro trial</span></h1>
+  <p class="sub">Unlock AI rewrites, whole-site scans, audit history and branded client reports. Card required, <strong>$9.99/mo after the trial</strong> — cancel anytime in one click.</p>
+
+  <div class="cta-row" style="justify-content:center">
+    <button id="trial-monthly" class="btn btn-primary">Start 7-day trial — then $9.99/mo</button>
+    <button id="trial-yearly" class="btn btn-ghost">Or pay yearly — $95/yr (2 months free)</button>
+  </div>
+  <div class="trust">Secure checkout by Paddle · VAT/tax handled · Cancel anytime</div>
+
+  <!-- Shown after a successful sandbox/live checkout -->
+  <div id="success" class="capture" style="display:none;max-width:560px;margin:34px auto 0;text-align:center">
+    <div class="kicker">You're in 🎉</div>
+    <h2 style="margin-top:6px">Pro trial started</h2>
+    <p class="lead">Your trial is active. Open the GEO Lens extension — the locked Pro features are now unlocked. You can manage or cancel anytime from the receipt email.</p>
+    <div class="micro" id="success-detail" style="margin-top:10px"></div>
+  </div>
+
+  <div id="config-warning" class="micro" style="display:none;max-width:560px;margin:20px auto 0;color:var(--amber)">
+    ⚠️ Checkout isn’t configured yet (placeholder Paddle IDs). Paste your sandbox token + price IDs into the constants at the top of <code>upgrade.html</code> to enable it.
+  </div>
+</div></header>
+
+<section class="block" id="pricing"><div class="wrap">
+  <div class="kicker">What Pro adds</div>
+  <h2>Everything in Free, plus the agency workhorse features</h2>
+  <div class="compare">
+    <table>
+      <tr><th>Feature</th><th>Free</th><th>Pro <span class="pill">$9.99/mo</span></th></tr>
+      <tr><td>AI Citability Score &amp; 14-signal audit</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Fix Generator — copy-paste schema / FAQ / meta code</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>AI rewrite of weak sections (bring your own key)</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Multi-page / whole-site scans</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Audit history &amp; score tracking</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Branded PDF client reports</td><td class="no">—</td><td class="yes">✓</td></tr>
+    </table>
+  </div>
+  <p class="lead" style="margin-top:22px;font-size:15px"><a href="index.html#pricing">← Back to the full comparison</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="brand"><span class="logo">◎</span>GEO Lens</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refunds.html">Refunds</a>
+    <a href="mailto:ekinci43213@gmail.com">Contact</a>
+  </div>
+  <div>© 2026 GEO Lens · Billing by Paddle</div>
+</div></footer>
+
+<!-- Paddle Billing v2 -->
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+/* ============================================================
+   PASTE YOUR PADDLE IDs HERE (PAYMENT-SETUP.md Step 4)
+   - While testing: ENV = "sandbox" + the test_ token + sandbox price IDs.
+   - Going live:     ENV = "production" + the live_ token + live price IDs.
+   Everything below is wired; you only edit these 4 constants.
+   ============================================================ */
+var PADDLE_ENV       = "sandbox";                 // "sandbox" | "production"
+var PADDLE_TOKEN     = "test_REPLACE_ME";         // Paddle → Developer Tools → Authentication (client-side token)
+var PRICE_ID_MONTHLY = "pri_REPLACE_ME_MONTHLY";  // $9.99/mo price id  (pri_...)
+var PRICE_ID_YEARLY  = "pri_REPLACE_ME_YEARLY";   // $95/yr price id    (optional; leave as-is to hide the yearly button)
+
+var configured = !/REPLACE_ME/.test(PADDLE_TOKEN) && !/REPLACE_ME/.test(PRICE_ID_MONTHLY);
+
+function showSuccess(data) {
+  document.getElementById("success").style.display = "block";
+  var d = document.getElementById("success-detail");
+  var txn = data && data.transaction_id ? ("Reference: " + data.transaction_id) : "";
+  d.textContent = txn;
+  // Hand the extension a signal it can read on next open. The extension's
+  // popup checks this on a page it controls; for v1 we also stash it here so a
+  // returning user sees the unlocked state. Real entitlement = the Paddle
+  // subscription; harden with a webhook + verify endpoint later (see PRO-BUILD.md).
+  try { localStorage.setItem("gl_pro_checkout", JSON.stringify({ at: Date.now(), ref: data && data.transaction_id || null })); } catch (e) {}
+  document.getElementById("success").scrollIntoView({ behavior: "smooth" });
+}
+
+function openCheckout(priceId) {
+  if (!configured) { document.getElementById("config-warning").style.display = "block"; return; }
+  Paddle.Checkout.open({
+    items: [{ priceId: priceId, quantity: 1 }],
+    settings: { displayMode: "overlay", theme: "dark", allowLogout: false }
+  });
+}
+
+(function init() {
+  if (configured && window.Paddle) {
+    if (PADDLE_ENV === "sandbox") Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+      token: PADDLE_TOKEN,
+      eventCallback: function (ev) {
+        if (ev && ev.name === "checkout.completed") showSuccess(ev.data);
+      }
+    });
+  } else if (!configured) {
+    document.getElementById("config-warning").style.display = "block";
+  }
+
+  document.getElementById("trial-monthly").addEventListener("click", function () { openCheckout(PRICE_ID_MONTHLY); });
+
+  var yBtn = document.getElementById("trial-yearly");
+  if (/REPLACE_ME/.test(PRICE_ID_YEARLY)) { yBtn.style.display = "none"; }
+  else { yBtn.addEventListener("click", function () { openCheckout(PRICE_ID_YEARLY); }); }
+})();
+</script>
+
+</body>
+</html>

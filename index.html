@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEO Lens — AI Citability Audit & Fix Generator</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="description" content="GEO Lens is a free Chrome extension that scores how citable any page is by ChatGPT, Perplexity & Google AI — and generates ready-to-paste code to fix it.">
+<meta name="author" content="GEO Lens">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "GEO Lens — AI Citability Audit & Fix Generator",
+      "applicationCategory": "BrowserApplication",
+      "operatingSystem": "Chrome",
+      "url": "https://justcoderworld.github.io/geo-lens/",
+      "description": "GEO Lens is a free Chrome extension that scores how likely AI answer engines like ChatGPT, Perplexity and Google AI Overviews are to cite any web page, then generates ready-to-paste schema and content fixes.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@type": "Organization", "name": "GEO Lens" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is GEO Lens?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GEO Lens is a free Chrome extension that scores how likely AI answer engines like ChatGPT, Perplexity and Google AI Overviews are to cite any web page, then generates ready-to-paste code to fix the gaps it finds." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Generative Engine Optimization (GEO)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Generative Engine Optimization (GEO) is the practice of structuring web content so AI answer engines can understand, trust and cite it. It is the AI-search counterpart to traditional SEO." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is GEO Lens different from just asking ChatGPT?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A chatbot only helps if you already know what is wrong, and it often guesses your page from partial HTML. GEO Lens measures your real, rendered page and generates the exact fix, in one click, with no prompt writing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does GEO Lens collect my data?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The free extension reads only the page you are actively viewing, runs entirely in your browser, and sends nothing to any server." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does GEO Lens cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "GEO Lens is free, including the citability score and the fix generator. GEO Lens Pro is a paid plan that adds AI rewrites, multi-page scans and branded client reports." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <div class="brand"><span class="logo">◎</span>GEO Lens</div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="tools/">Free tools</a>
+    <a href="blog/">Blog</a>
+    <a href="#faq">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow"><span class="dot"></span>Generative Engine Optimization</div>
+  <h1>AI does the writing.<br><span class="grad">GEO Lens does the knowing.</span></h1>
+  <p class="sub">ChatGPT can write schema — but only if you know what's broken and trust it didn't guess your page. GEO Lens reads your real, live page in one click and hands you the exact fix.</p>
+  <div class="cta-row">
+    <!-- TODO: replace # with the Chrome Web Store URL after publish -->
+    <a class="btn btn-primary" href="#">＋ Add to Chrome — Free</a>
+    <a class="btn btn-ghost" href="#early-access">Get Pro early access</a>
+  </div>
+  <div class="trust">Free · Private by design · No account · Reads only your current tab</div>
+  <div style="max-width:760px;margin:40px auto 0">
+    <video src="geo-lens-promo.mp4" autoplay muted loop playsinline controls
+      style="width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45)"></video>
+  </div>
+</div></header>
+
+<section class="block" id="what"><div class="wrap">
+  <div class="kicker">Overview</div>
+  <h2>What is GEO Lens?</h2>
+  <p class="lead">GEO Lens is a free Chrome extension that scores how likely AI answer engines like ChatGPT, Perplexity and Google AI Overviews are to cite any web page, then generates the ready-to-paste code to fix it. Generative Engine Optimization (GEO) is the practice of structuring content so AI answers can understand, trust and cite it — and GEO Lens is the one-click way to measure and improve it on any page.</p>
+  <p class="lead" style="margin-top:18px">GEO Lens checks the on-page signals answer engines actually reward:</p>
+  <ul style="max-width:620px;margin:18px auto 0;color:var(--muted);font-size:16px;line-height:1.9;list-style:none;text-align:left">
+    <li>✅ Structured data (schema.org) — including FAQPage specifically</li>
+    <li>✅ Question-based headings and FAQ / Q&amp;A content</li>
+    <li>✅ Answer-first opening paragraphs</li>
+    <li>✅ Lists, tables and scannable structure</li>
+    <li>✅ Author, E-E-A-T and outbound citations</li>
+    <li>✅ Freshness, content depth, definitions, alt text, title and meta</li>
+  </ul>
+</div></section>
+
+<section class="block" id="how"><div class="wrap">
+  <div class="kicker">Why GEO Lens</div>
+  <h2>Other tools grade your page. <span class="grad">GEO Lens fixes it.</span></h2>
+  <p class="lead">Search moved to AI answers. If ChatGPT, Perplexity and Google AI don't cite your page, you're invisible — and your keyword tools can't even see the gap.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="ic">⚡</div>
+      <h3>It writes the fix</h3>
+      <p>Missing FAQPage schema? GEO Lens reads your page's own Q&amp;A and generates valid, copy-paste JSON-LD. No advice — actual code, one click to copy.</p>
+    </div>
+    <div class="card">
+      <div class="ic">◎</div>
+      <h3>Measures, never guesses</h3>
+      <p>It reads your live, rendered page — real schema, real headings, real alt-text. No hallucinated content like you get pasting a URL into a chatbot.</p>
+    </div>
+    <div class="card">
+      <div class="ic">✓</div>
+      <h3>One click, zero prompts</h3>
+      <p>Score any page across 14 citability signals instantly. No prompt-writing, no copy-paste, no "did it fetch the right page?".</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="pricing"><div class="wrap">
+  <div class="kicker">Pricing</div>
+  <h2>Free for one page. <span class="grad">Pro for your whole site.</span></h2>
+  <div class="compare">
+    <table>
+      <tr><th>Feature</th><th>Free</th><th>Pro <span class="pill">$9.99/mo</span></th></tr>
+      <tr><td>AI Citability Score &amp; 14 signal audit</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>Fix Generator — copy-paste schema / FAQ / meta code</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>One-click report</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+      <tr><td>AI rewrite of weak sections (bring your own key)</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Multi-page / whole-site scans</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Audit history &amp; score tracking</td><td class="no">—</td><td class="yes">✓</td></tr>
+      <tr><td>Branded PDF client reports</td><td class="no">—</td><td class="yes">✓</td></tr>
+    </table>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="capture" id="early-access">
+    <div class="kicker">Early access</div>
+    <h2 style="margin-top:0">Be first to GEO Lens Pro</h2>
+    <p class="lead">Get a 7-day Pro trial and launch-day pricing. No spam — one email when it's ready.</p>
+    <!-- TODO: create a free Formspree form and replace YOUR_FORM_ID -->
+    <form class="signup" action="https://formspree.io/f/mvzjrbzq" method="POST">
+      <input type="email" name="email" placeholder="you@company.com" required>
+      <button class="btn btn-primary" type="submit">Notify me</button>
+    </form>
+    <div class="micro">We store only your email, only to notify you about Pro. See our <a href="privacy.html">privacy policy</a>.</div>
+  </div>
+</div></section>
+
+<section class="block" id="resources"><div class="wrap">
+  <div class="kicker">Resources</div>
+  <h2>Learn GEO — and fix your pages</h2>
+  <p class="lead">Free, data-backed guides plus a no-signup tool that writes valid schema for you.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="ic">⚡</div>
+      <h3><a href="tools/faqpage-schema-generator.html">Free FAQPage Schema Generator</a></h3>
+      <p>Paste your questions and answers, get valid copy-paste FAQPage JSON-LD in seconds. No account.</p>
+    </div>
+    <div class="card">
+      <div class="ic">◎</div>
+      <h3><a href="blog/google-rank-but-not-cited.html">Ranks #1 but ChatGPT ignores it</a></h3>
+      <p>Why Google ranking and AI citability split apart in 2026 — and the data behind the gap.</p>
+    </div>
+    <div class="card">
+      <div class="ic">✓</div>
+      <h3><a href="blog/get-cited-by-chatgpt-perplexity.html">Get cited by ChatGPT &amp; Perplexity</a></h3>
+      <p>8 proven tactics — consensus signals, original data, schema and more — with the numbers.</p>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:26px;font-size:15px"><a href="tools/">All free tools →</a> &nbsp;·&nbsp; <a href="blog/">All GEO guides →</a></p>
+</div></section>
+
+<section class="block" id="faq"><div class="wrap">
+  <div class="kicker">FAQ</div>
+  <h2>Frequently asked questions</h2>
+  <div style="max-width:720px;margin:36px auto 0;text-align:left">
+    <h3 style="font-size:21px;margin-top:24px">What is GEO Lens?</h3>
+    <p class="lead" style="text-align:left;margin-top:8px">GEO Lens is a free Chrome extension that scores how likely AI answer engines like ChatGPT, Perplexity and Google AI Overviews are to cite any web page, then generates ready-to-paste code to fix the gaps it finds.</p>
+    <h3 style="font-size:21px;margin-top:24px">What is Generative Engine Optimization (GEO)?</h3>
+    <p class="lead" style="text-align:left;margin-top:8px">Generative Engine Optimization (GEO) is the practice of structuring web content so AI answer engines can understand, trust and cite it. It is the AI-search counterpart to traditional SEO, and it is the fastest-growing layer of search in 2026.</p>
+    <h3 style="font-size:21px;margin-top:24px">How is GEO Lens different from just asking ChatGPT?</h3>
+    <p class="lead" style="text-align:left;margin-top:8px">A chatbot only helps if you already know what is wrong, and it often guesses your page from partial HTML. GEO Lens measures your real, rendered page and generates the exact fix in one click — no prompt writing, no copy-paste guesswork.</p>
+    <h3 style="font-size:21px;margin-top:24px">Does GEO Lens collect my data?</h3>
+    <p class="lead" style="text-align:left;margin-top:8px">No. The free extension reads only the page you are actively viewing, runs entirely in your browser, and sends nothing to any server. Read the full <a href="privacy.html">privacy policy</a>.</p>
+    <h3 style="font-size:21px;margin-top:24px">How much does GEO Lens cost?</h3>
+    <p class="lead" style="text-align:left;margin-top:8px">GEO Lens is free, including the citability score and the fix generator. GEO Lens Pro is a paid plan ($9.99/mo) that adds AI rewrites, multi-page scans and branded client reports.</p>
+  </div>
+  <p class="lead" style="margin-top:34px;font-size:14px">Further reading: <a href="https://schema.org/FAQPage" rel="noopener" target="_blank">schema.org FAQPage</a> · <a href="https://developers.google.com/search/docs/appearance/structured-data" rel="noopener" target="_blank">Google structured data docs</a> · <a href="https://arxiv.org/abs/2311.09735" rel="noopener" target="_blank">Princeton GEO research paper</a></p>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="brand"><span class="logo">◎</span>GEO Lens</div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="blog/">Blog</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refunds.html">Refunds</a>
+    <a href="mailto:ekinci43213@gmail.com">Contact</a>
+  </div>
+  <div>By the GEO Lens team · Last updated <time datetime="2026-06-28">June 28, 2026</time> · © 2026 GEO Lens</div>
+</div></footer>
+
+</body>
+</html>
