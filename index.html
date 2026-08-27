@@ -7,8 +7,17 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
-<meta name="description" content="GEO Lens is a free Chrome extension that scores how citable any page is by ChatGPT, Perplexity & Google AI — and generates ready-to-paste code to fix it.">
+<meta name="description" content="GEO Lens is a free Chrome extension that scores how citable any page is by ChatGPT, Perplexity &amp; Google AI — and generates ready-to-paste code to fix it.">
 <meta name="author" content="GEO Lens">
+<link rel="canonical" href="https://justcoderworld.github.io/">
+<meta property="og:site_name" content="GEO Lens">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GEO Lens — AI Citability Audit &amp; Fix Generator">
+<meta property="og:url" content="https://justcoderworld.github.io/">
+<meta property="og:description" content="GEO Lens is a free Chrome extension that scores how citable any page is by ChatGPT, Perplexity &amp; Google AI — and generates ready-to-paste code to fix it.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GEO Lens — AI Citability Audit &amp; Fix Generator">
+<meta name="twitter:description" content="GEO Lens is a free Chrome extension that scores how citable any page is by ChatGPT, Perplexity &amp; Google AI — and generates ready-to-paste code to fix it.">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {
@@ -18,8 +27,8 @@
       "@type": "SoftwareApplication",
       "name": "GEO Lens — AI Citability Audit & Fix Generator",
       "applicationCategory": "BrowserApplication",
-      "operatingSystem": "Chrome",
-      "url": "https://justcoderworld.github.io/geo-lens/",
+      "operatingSystem": "Windows, macOS, Linux, ChromeOS",
+      "url": "https://justcoderworld.github.io/",
       "description": "GEO Lens is a free Chrome extension that scores how likely AI answer engines like ChatGPT, Perplexity and Google AI Overviews are to cite any web page, then generates ready-to-paste schema and content fixes.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "publisher": { "@type": "Organization", "name": "GEO Lens" }
@@ -72,19 +81,20 @@
   </div>
 </div></nav>
 
+<main>
+
 <header class="hero"><div class="wrap">
   <div class="eyebrow"><span class="dot"></span>Generative Engine Optimization</div>
   <h1>AI does the writing.<br><span class="grad">GEO Lens does the knowing.</span></h1>
   <p class="sub">ChatGPT can write schema — but only if you know what's broken and trust it didn't guess your page. GEO Lens reads your real, live page in one click and hands you the exact fix.</p>
   <div class="cta-row">
-    <!-- TODO: replace # with the Chrome Web Store URL after publish -->
-    <a class="btn btn-primary" href="#">＋ Add to Chrome — Free</a>
+    <a class="btn btn-primary" href="#early-access">＋ Add to Chrome — Free</a>
     <a class="btn btn-ghost" href="#early-access">Get Pro early access</a>
   </div>
   <div class="trust">Free · Private by design · No account · Reads only your current tab</div>
   <div style="max-width:760px;margin:40px auto 0">
-    <video src="geo-lens-promo.mp4" autoplay muted loop playsinline controls
-      style="width:100%;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45)"></video>
+    <video src="geo-lens-promo.mp4" width="1280" height="720" preload="metadata" muted loop playsinline controls
+      style="width:100%;height:auto;border-radius:14px;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45)"></video>
   </div>
 </div></header>
 
@@ -131,7 +141,10 @@
   <h2>Free for one page. <span class="grad">Pro for your whole site.</span></h2>
   <div class="compare">
     <table>
-      <tr><th>Feature</th><th>Free</th><th>Pro <span class="pill">$9.99/mo</span></th></tr>
+      <thead>
+        <tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col">Pro <span class="pill">$9.99/mo</span></th></tr>
+      </thead>
+      <tbody>
       <tr><td>AI Citability Score &amp; 14 signal audit</td><td class="yes">✓</td><td class="yes">✓</td></tr>
       <tr><td>Fix Generator — copy-paste schema / FAQ / meta code</td><td class="yes">✓</td><td class="yes">✓</td></tr>
       <tr><td>One-click report</td><td class="yes">✓</td><td class="yes">✓</td></tr>
@@ -139,6 +152,7 @@
       <tr><td>Multi-page / whole-site scans</td><td class="no">—</td><td class="yes">✓</td></tr>
       <tr><td>Audit history &amp; score tracking</td><td class="no">—</td><td class="yes">✓</td></tr>
       <tr><td>Branded PDF client reports</td><td class="no">—</td><td class="yes">✓</td></tr>
+      </tbody>
     </table>
   </div>
 </div></section>
@@ -148,9 +162,8 @@
     <div class="kicker">Early access</div>
     <h2 style="margin-top:0">Be first to GEO Lens Pro</h2>
     <p class="lead">Get a 7-day Pro trial and launch-day pricing. No spam — one email when it's ready.</p>
-    <!-- TODO: create a free Formspree form and replace YOUR_FORM_ID -->
     <form class="signup" action="https://formspree.io/f/mvzjrbzq" method="POST">
-      <input type="email" name="email" placeholder="you@company.com" required>
+      <input type="email" name="email" aria-label="Email address" placeholder="you@company.com" required>
       <button class="btn btn-primary" type="submit">Notify me</button>
     </form>
     <div class="micro">We store only your email, only to notify you about Pro. See our <a href="privacy.html">privacy policy</a>.</div>
@@ -198,6 +211,8 @@
   </div>
   <p class="lead" style="margin-top:34px;font-size:14px">Further reading: <a href="https://schema.org/FAQPage" rel="noopener" target="_blank">schema.org FAQPage</a> · <a href="https://developers.google.com/search/docs/appearance/structured-data" rel="noopener" target="_blank">Google structured data docs</a> · <a href="https://arxiv.org/abs/2311.09735" rel="noopener" target="_blank">Princeton GEO research paper</a></p>
 </div></section>
+
+</main>
 
 <footer><div class="wrap">
   <div class="brand"><span class="logo">◎</span>GEO Lens</div>

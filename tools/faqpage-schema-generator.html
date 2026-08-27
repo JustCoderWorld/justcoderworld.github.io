@@ -4,9 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Free FAQPage Schema Generator (JSON-LD) — GEO Lens</title>
-<meta name="description" content="Free FAQPage schema generator. Paste your questions and answers, get valid copy-paste FAQPage JSON-LD that helps ChatGPT, Perplexity & Google AI cite your page.">
+<meta name="description" content="Free FAQPage schema generator. Paste your questions and answers, get valid copy-paste FAQPage JSON-LD that helps ChatGPT, Perplexity &amp; Google AI cite your page.">
 <meta name="author" content="GEO Lens">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://justcoderworld.github.io/tools/faqpage-schema-generator.html">
+<meta property="og:site_name" content="GEO Lens">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free FAQPage Schema Generator (JSON-LD) — GEO Lens">
+<meta property="og:url" content="https://justcoderworld.github.io/tools/faqpage-schema-generator.html">
+<meta property="og:description" content="Free FAQPage schema generator. Paste your questions and answers, get valid copy-paste FAQPage JSON-LD that helps ChatGPT, Perplexity &amp; Google AI cite your page.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free FAQPage Schema Generator (JSON-LD) — GEO Lens">
+<meta name="twitter:description" content="Free FAQPage schema generator. Paste your questions and answers, get valid copy-paste FAQPage JSON-LD that helps ChatGPT, Perplexity &amp; Google AI cite your page.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -15,7 +24,7 @@
   "name": "Free FAQPage Schema Generator",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Any",
-  "url": "https://justcoderworld.github.io/geo-lens/tools/faqpage-schema-generator.html",
+  "url": "https://justcoderworld.github.io/tools/faqpage-schema-generator.html",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "A free tool that turns your questions and answers into valid FAQPage JSON-LD structured data for SEO and AI citability."
 }
@@ -76,7 +85,7 @@
 const qa = document.getElementById('qa');
 function addRow(q,a){
   const d = document.createElement('div'); d.className='qa-row';
-  d.innerHTML = '<label>Question</label><input class="q" placeholder="What is...?" value="'+(q||'').replace(/"/g,'&quot;')+'"><label style="margin-top:8px;display:block">Answer</label><textarea class="a" placeholder="A concise, self-contained answer.">'+(a||'')+'</textarea><div class="row-actions"><button class="btn-sm rm">Remove</button></div>';
+  d.innerHTML = '<label>Question</label><input class="q" aria-label="Question" placeholder="What is...?" value="'+(q||'').replace(/"/g,'&quot;')+'"><label style="margin-top:8px;display:block">Answer</label><textarea class="a" aria-label="Answer" placeholder="A concise, self-contained answer.">'+(a||'')+'</textarea><div class="row-actions"><button class="btn-sm rm" aria-label="Remove question">Remove</button></div>';
   d.querySelector('.rm').onclick=()=>d.remove();
   qa.appendChild(d);
 }
