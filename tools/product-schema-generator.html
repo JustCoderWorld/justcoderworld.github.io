@@ -8,6 +8,15 @@
 <meta name="author" content="GEO Lens">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" href="../favicon.png">
+<link rel="canonical" href="https://justcoderworld.github.io/tools/product-schema-generator.html">
+<meta property="og:site_name" content="GEO Lens">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Product Schema Generator (JSON-LD) — GEO Lens">
+<meta property="og:url" content="https://justcoderworld.github.io/tools/product-schema-generator.html">
+<meta property="og:description" content="Free Product schema generator. Fill in name, price, rating and availability to get valid Product JSON-LD that helps Google and AI shopping answers cite your product page.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Product Schema Generator (JSON-LD) — GEO Lens">
+<meta name="twitter:description" content="Free Product schema generator. Fill in name, price, rating and availability to get valid Product JSON-LD that helps Google and AI shopping answers cite your product page.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -16,7 +25,7 @@
   "name": "Free Product Schema Generator",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Any",
-  "url": "https://justcoderworld.github.io/geo-lens/tools/product-schema-generator.html",
+  "url": "https://justcoderworld.github.io/tools/product-schema-generator.html",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "A free tool that turns your product details into valid Product JSON-LD structured data for SEO and AI citability."
 }
@@ -31,6 +40,7 @@
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .btn-sm{font-size:12px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer}
+.btn-sm:hover{border-color:var(--accent)}
 .out{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#070809}
 .out-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(62,207,142,.08);border-bottom:1px solid var(--line);font-weight:700;font-size:13px;color:var(--green)}
 .out pre{margin:0;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55;color:#cdd3df;white-space:pre-wrap;word-break:break-word;max-height:360px;overflow:auto}
@@ -49,16 +59,16 @@
   <h1>Free Product Schema Generator</h1>
   <p class="intro">Generate valid <strong>Product JSON-LD</strong> — the structured data that helps Google and AI shopping answers (ChatGPT, Perplexity, Gemini) understand and cite your product: name, price, rating and availability. Fill in the details and paste the code into your product page's <code>&lt;head&gt;</code>.</p>
 
-  <div class="fld"><label>Product name</label><input id="name" placeholder="Acme Wireless Headphones"></div>
-  <div class="fld"><label>Description</label><input id="desc" placeholder="Noise-cancelling over-ear headphones with 40h battery."></div>
+  <div class="fld"><label for="name">Product name</label><input id="name" placeholder="Acme Wireless Headphones"></div>
+  <div class="fld"><label for="desc">Description</label><input id="desc" placeholder="Noise-cancelling over-ear headphones with 40h battery."></div>
   <div class="grid2">
-    <div class="fld"><label>Brand</label><input id="brand" placeholder="Acme"></div>
-    <div class="fld"><label>Image URL</label><input id="image" placeholder="https://yoursite.com/product.jpg"></div>
+    <div class="fld"><label for="brand">Brand</label><input id="brand" placeholder="Acme"></div>
+    <div class="fld"><label for="image">Image URL</label><input id="image" placeholder="https://yoursite.com/product.jpg"></div>
   </div>
   <div class="grid3">
-    <div class="fld"><label>Price</label><input id="price" placeholder="199.00"></div>
-    <div class="fld"><label>Currency</label><input id="currency" placeholder="USD" value="USD"></div>
-    <div class="fld"><label>Availability</label>
+    <div class="fld"><label for="price">Price</label><input id="price" placeholder="199.00"></div>
+    <div class="fld"><label for="currency">Currency</label><input id="currency" placeholder="USD" value="USD"></div>
+    <div class="fld"><label for="avail">Availability</label>
       <select id="avail">
         <option value="https://schema.org/InStock">In stock</option>
         <option value="https://schema.org/OutOfStock">Out of stock</option>
@@ -67,10 +77,11 @@
     </div>
   </div>
   <div class="grid3">
-    <div class="fld"><label>Avg. rating (optional)</label><input id="rating" placeholder="4.6"></div>
-    <div class="fld"><label>Review count (optional)</label><input id="rcount" placeholder="128"></div>
-    <div class="fld"><label>Product URL (optional)</label><input id="url" placeholder="https://yoursite.com/product"></div>
+    <div class="fld"><label for="rating">Avg. rating (optional)</label><input id="rating" placeholder="4.6"></div>
+    <div class="fld"><label for="rcount">Review count (optional)</label><input id="rcount" placeholder="128"></div>
+    <div class="fld"><label for="url">Product URL (optional)</label><input id="url" placeholder="https://yoursite.com/product"></div>
   </div>
+  <p style="color:var(--muted);font-size:13px;margin-top:8px">Note: Google requires <em>both</em> a rating value and a review count — the rating is only included in the generated schema when both fields are filled in.</p>
 
   <div style="margin-top:20px"><button class="btn btn-primary" id="gen">Generate Product JSON-LD</button></div>
 

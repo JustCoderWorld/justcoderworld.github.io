@@ -8,6 +8,15 @@
 <meta name="author" content="GEO Lens">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" href="../favicon.png">
+<link rel="canonical" href="https://justcoderworld.github.io/tools/article-schema-generator.html">
+<meta property="og:site_name" content="GEO Lens">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Article Schema Generator (JSON-LD) — GEO Lens">
+<meta property="og:url" content="https://justcoderworld.github.io/tools/article-schema-generator.html">
+<meta property="og:description" content="Free Article schema generator. Fill in your headline, author and dates to get valid Article JSON-LD that helps Google, ChatGPT & Perplexity understand and cite your content.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Article Schema Generator (JSON-LD) — GEO Lens">
+<meta name="twitter:description" content="Free Article schema generator. Fill in your headline, author and dates to get valid Article JSON-LD that helps Google, ChatGPT & Perplexity understand and cite your content.">
 <link rel="stylesheet" href="../style.css">
 <script type="application/ld+json">
 {
@@ -16,7 +25,7 @@
   "name": "Free Article Schema Generator",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Any",
-  "url": "https://justcoderworld.github.io/geo-lens/tools/article-schema-generator.html",
+  "url": "https://justcoderworld.github.io/tools/article-schema-generator.html",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
   "description": "A free tool that turns your article details into valid Article JSON-LD structured data for SEO and AI citability."
 }
@@ -30,6 +39,7 @@
 .fld input{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;padding:10px 12px}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .btn-sm{font-size:12px;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card2);color:var(--text);cursor:pointer}
+.btn-sm:hover{border-color:var(--accent)}
 .out{margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#070809}
 .out-head{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:rgba(62,207,142,.08);border-bottom:1px solid var(--line);font-weight:700;font-size:13px;color:var(--green)}
 .out pre{margin:0;padding:16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.55;color:#cdd3df;white-space:pre-wrap;word-break:break-word;max-height:360px;overflow:auto}
@@ -48,18 +58,18 @@
   <h1>Free Article Schema Generator</h1>
   <p class="intro">Generate valid <strong>Article JSON-LD</strong> — the structured data that helps Google, ChatGPT and Perplexity understand who wrote your content, when, and what it's about (a key E-E-A-T and citability signal). Fill in the details and copy the code into your page's <code>&lt;head&gt;</code>.</p>
 
-  <div class="fld"><label>Headline</label><input id="headline" placeholder="How to get cited by ChatGPT in 2026"></div>
-  <div class="fld"><label>Page URL</label><input id="url" placeholder="https://yoursite.com/blog/post"></div>
-  <div class="fld"><label>Short description</label><input id="desc" placeholder="A concise summary of the article."></div>
+  <div class="fld"><label for="headline">Headline</label><input id="headline" placeholder="How to get cited by ChatGPT in 2026"></div>
+  <div class="fld"><label for="url">Page URL</label><input id="url" placeholder="https://yoursite.com/blog/post"></div>
+  <div class="fld"><label for="desc">Short description</label><input id="desc" placeholder="A concise summary of the article."></div>
   <div class="grid2">
-    <div class="fld"><label>Author name</label><input id="author" placeholder="Jane Doe"></div>
-    <div class="fld"><label>Publisher / site name</label><input id="publisher" placeholder="Your Site"></div>
+    <div class="fld"><label for="author">Author name</label><input id="author" placeholder="Jane Doe"></div>
+    <div class="fld"><label for="publisher">Publisher / site name</label><input id="publisher" placeholder="Your Site"></div>
   </div>
   <div class="grid2">
-    <div class="fld"><label>Date published</label><input id="published" type="date"></div>
-    <div class="fld"><label>Date modified</label><input id="modified" type="date"></div>
+    <div class="fld"><label for="published">Date published</label><input id="published" type="date"></div>
+    <div class="fld"><label for="modified">Date modified</label><input id="modified" type="date"></div>
   </div>
-  <div class="fld"><label>Image URL (optional)</label><input id="image" placeholder="https://yoursite.com/cover.jpg"></div>
+  <div class="fld"><label for="image">Image URL (optional)</label><input id="image" placeholder="https://yoursite.com/cover.jpg"></div>
 
   <div style="margin-top:20px"><button class="btn btn-primary" id="gen">Generate Article JSON-LD</button></div>
 
@@ -92,7 +102,7 @@ document.getElementById('gen').onclick=()=>{
   if(v('author'))obj.author={"@type":"Person","name":v('author')};
   if(v('publisher'))obj.publisher={"@type":"Organization","name":v('publisher')};
   if(v('published'))obj.datePublished=v('published');
-  if(v('modified'))obj.dateModified=v('modified')||v('published');
+  if(v('modified')||v('published'))obj.dateModified=v('modified')||v('published');
   if(!obj.headline){alert('Add at least a headline.');return;}
   const code='<script type="application/ld+json">\n'+JSON.stringify(obj,null,2)+'\n<\/script>';
   document.getElementById('out').textContent=code;
